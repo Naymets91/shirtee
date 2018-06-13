@@ -19,11 +19,6 @@ public class ShopPage extends Page {
         Product.price = $(byXpath("(//div[@class='price-box-wrap'])[" + s + "]//span")).getText();
         $(byXpath("(//div[@class='item-in'])[" + s + "]")).should(visible).click();
         report("Выбран товар: " + Product.name);
-
-        System.out.println("Найдено товаров " + r );
-        System.out.println("Выбрано товар № " + s);
-        System.out.println("Названия товара " + Product.name);
-        System.out.println("Цена товара " + Product.price);
-        System.out.println(" ");
+        report("Цена товара: " + Product.price);
     }
 }

@@ -24,6 +24,8 @@ public class ShirteeTest {
     ShopPage shopPg;
     ProduckPage produckPg;
     BasketPage basketPg;
+    CheckingBasketPage checkingBasketPg;
+
 
     @BeforeClass
     public void setUp() {
@@ -44,15 +46,18 @@ public class ShirteeTest {
         shopPg = new ShopPage();
         produckPg = new ProduckPage();
         basketPg = new BasketPage();
+        checkingBasketPg = new CheckingBasketPage();
     }
 
     @Test()
-    public void testMail() {
+    public void test() {
         loginPg.logIn();
 
         cabinetPg.clickButtonCreateCampaign();
 
         designerPg.clickButtonChop();
+
+        checkingBasketPg.check();
 
         shopPg.selectRandomProduct();
 
@@ -61,8 +66,8 @@ public class ShirteeTest {
         produckPg.clickButtonCart();
         produckPg.clickButtonBasket();
 
-        basketPg.compareName();
         basketPg.comparePrice();
+        basketPg.compareName();
         basketPg.compareSize();
         basketPg.compareColor();
         basketPg.deleteItem();

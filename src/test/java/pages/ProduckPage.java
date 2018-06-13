@@ -18,9 +18,6 @@ public class ProduckPage extends Page {
         $(byXpath("(//span[@onclick='changeColor(this)'])[" + s + "]")).should(visible).click();
         Product.color = $(byXpath("//span[@class='color-btn active']")).getAttribute("title");
         report("Цвет выбран: " + Product.color);
-
-        System.out.println("Доступо цветов " + r);
-        System.out.println("Вбран цвет №"  + s + " : " + Product.color );
     }
 
     @Step("Выбор рандомного размера")
@@ -30,10 +27,6 @@ public class ProduckPage extends Page {
         $(byXpath("(//div[@name='addition_size[]']//label)[" + s + "]")).should(visible).click();
         Product.size = $(byXpath("(//div[@name='addition_size[]']//label)[" + s + "]")).getText();
         report("Размер выбран: " + Product.size);
-
-        System.out.println("Доступно  размеров : " + r);
-        System.out.println("Выбран размер №"  + s + " : " + Product.size );
-        System.out.println("");
     }
 
     @Step("Нажать на кнопку : Add To Cart")
